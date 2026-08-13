@@ -13,6 +13,12 @@
             align-items: center;
         }
 
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
         .login-container {
             background: white;
             padding: 40px;
@@ -31,6 +37,10 @@
         }
 
         .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row .form-group {
             margin-bottom: 20px;
         }
 
@@ -125,3 +135,5 @@
         .signup-link a:hover {
             color: #764ba2;
         }
+
+        
