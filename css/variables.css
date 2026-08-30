@@ -8,25 +8,40 @@
 
 :root {
   /* --- Color Palette --- */
-  --bg: #F5F7F1;           /* Soft off-white page background */
-  --bg-deep: #EAEFE6;      /* Slightly darker tone for subtle depth and gradients */
-  --ink: #142420;          /* Deep forest black for primary text and headings */
-  --ink-soft: #4B5C55;     /* Muted sage-grey for secondary/body text */
-  --pine: #1F4B43;         /* Signature dark pine green for primary actions & branding */
-  --pine-light: #3C7268;   /* Lighter pine for hover states and subtle badges */
-  --pine-pale: #DCE7E1;    /* Pale mint for icon containers and tag backgrounds */
-  --coral: #E38B6F;        /* Vibrant warm coral for accents, active dots & highlights */
-  --coral-deep: #C96E52;   /* Deep coral for role labels and emphasized badges */
-  --card: #FFFFFF;         /* Pure white background for elevated cards */
+  --bg: #F5F7F1;
+  /* Soft off-white page background */
+  --bg-deep: #EAEFE6;
+  /* Slightly darker tone for subtle depth and gradients */
+  --ink: #142420;
+  /* Deep forest black for primary text and headings */
+  --ink-soft: #4B5C55;
+  /* Muted sage-grey for secondary/body text */
+  --pine: #1F4B43;
+  /* Signature dark pine green for primary actions & branding */
+  --pine-light: #3C7268;
+  /* Lighter pine for hover states and subtle badges */
+  --pine-pale: #DCE7E1;
+  /* Pale mint for icon containers and tag backgrounds */
+  --coral: #E38B6F;
+  /* Vibrant warm coral for accents, active dots & highlights */
+  --coral-deep: #C96E52;
+  /* Deep coral for role labels and emphasized badges */
+  --card: #FFFFFF;
+  /* Pure white background for elevated cards */
 
   /* --- Borders, Lines & Shadows --- */
-  --line: rgba(20, 36, 32, 0.13);                     /* Subtle outline border */
-  --shadow: 0 20px 50px -20px rgba(20, 36, 32, 0.25); /* Soft dimensional drop shadow */
+  --line: rgba(20, 36, 32, 0.13);
+  /* Subtle outline border */
+  --shadow: 0 20px 50px -20px rgba(20, 36, 32, 0.25);
+  /* Soft dimensional drop shadow */
 
   /* --- Typography Families --- */
-  --display: 'Fraunces', Georgia, serif;               /* Editorial serif for headlines */
-  --body: 'Manrope', -apple-system, sans-serif;        /* Clean sans-serif for UI & body text */
-  --mono: 'IBM Plex Mono', monospace;                  /* Monospace for badges, stats & prices */
+  --display: 'Fraunces', Georgia, serif;
+  /* Editorial serif for headlines */
+  --body: 'Manrope', -apple-system, sans-serif;
+  /* Clean sans-serif for UI & body text */
+  --mono: 'IBM Plex Mono', monospace;
+  /* Monospace for badges, stats & prices */
 }
 
 /* ==============================================================================
@@ -34,7 +49,9 @@
  * ============================================================================== */
 
 /* Box sizing reset for predictable element dimensions */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;

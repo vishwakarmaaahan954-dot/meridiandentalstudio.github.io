@@ -10,20 +10,66 @@ import React, { useState, useEffect } from 'react';
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
     };
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.nav-item')) {
+        setActiveDropdown(null);
+      }
+    };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActiveDropdown(null);
+        setIsMobileOpen(false);
+      }
+    };
+
+    const desktopMedia = window.matchMedia('(min-width: 901px)');
+    const handleViewportChange = (e: MediaQueryListEvent) => {
+      if (e.matches) {
+        setIsMobileOpen(false);
+        setActiveDropdown(null);
+      }
+    };
+    if (desktopMedia.addEventListener) {
+      desktopMedia.addEventListener('change', handleViewportChange);
+    }
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+      if (desktopMedia.removeEventListener) {
+        desktopMedia.removeEventListener('change', handleViewportChange);
+      }
+    };
   }, []);
+
+  const toggleDropdown = (name: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveDropdown((prev) => (prev === name ? null : name));
+  };
+
+  const handleLinkClick = () => {
+    setActiveDropdown(null);
+    setIsMobileOpen(false);
+  };
 
   const toggleMobileNav = () => {
     setIsMobileOpen((prev) => !prev);
   };
 
   const closeMobileNav = () => {
+    setActiveDropdown(null);
     setIsMobileOpen(false);
   };
 
@@ -40,72 +86,68 @@ export const Header: React.FC = () => {
         </svg>
         <span className="brand-text">
           <span className="name">Meridian Dental Studio</span>
-          <span className="tag">Dr. Aanya Sharma · Kanpur</span>
+          <span className="tag">Dr. Pooja Sharma · Kanpur</span>
         </span>
       </a>
 
       <nav
         className="main-nav"
-        style={
-          isMobileOpen
-            ? {
-                display: 'flex',
-                position: 'fixed',
-                top: '70px',
-                left: 0,
-                right: 0,
-                flexDirection: 'column',
-                background: '#ffffff',
-                padding: '20px',
-                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
-                zIndex: 200,
-                borderBottom: '1px solid var(--line)'
-              }
-            : undefined
-        }
+        data-mobile-open={isMobileOpen ? 'true' : undefined}
       >
-        <div className="nav-item">
-          <button type="button">
+        <div className={`nav-item ${activeDropdown === 'services' ? 'open' : ''}`}>
+          <button
+            type="button"
+            onClick={(e) => toggleDropdown('services', e)}
+            aria-expanded={activeDropdown === 'services'}
+          >
             Services{' '}
             <svg viewBox="0 0 12 8" fill="none">
               <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.6" />
             </svg>
           </button>
           <div className="dropdown">
-            <a href="#services" onClick={closeMobileNav}>General &amp; Preventive<span>Checkups, cleanings, X-rays</span></a>
-            <a href="#services" onClick={closeMobileNav}>Cosmetic Dentistry<span>Veneers, whitening, bonding</span></a>
-            <a href="#services" onClick={closeMobileNav}>Orthodontics<span>Invisalign &amp; clear aligners</span></a>
-            <a href="#services" onClick={closeMobileNav}>Restorative Care<span>Implants, crowns, root canals</span></a>
-            <a href="#services" onClick={closeMobileNav}>Pediatric Dentistry<span>Gentle care for kids</span></a>
+            <a href="#services" onClick={handleLinkClick}>General &amp; Preventive<span>Checkups, cleanings, X-rays</span></a>
+            <a href="#services" onClick={handleLinkClick}>Cosmetic Dentistry<span>Veneers, whitening, bonding</span></a>
+            <a href="#services" onClick={handleLinkClick}>Orthodontics<span>Invisalign &amp; clear aligners</span></a>
+            <a href="#services" onClick={handleLinkClick}>Restorative Care<span>Implants, crowns, root canals</span></a>
+            <a href="#services" onClick={handleLinkClick}>Pediatric Dentistry<span>Gentle care for kids</span></a>
           </div>
         </div>
 
-        <div className="nav-item">
-          <button type="button">
+        <div className={`nav-item ${activeDropdown === 'patients' ? 'open' : ''}`}>
+          <button
+            type="button"
+            onClick={(e) => toggleDropdown('patients', e)}
+            aria-expanded={activeDropdown === 'patients'}
+          >
             Patients{' '}
             <svg viewBox="0 0 12 8" fill="none">
               <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.6" />
             </svg>
           </button>
           <div className="dropdown">
-            <a href="#book" onClick={closeMobileNav}>New Patient Forms<span>Fill out before your visit</span></a>
-            <a href="#why" onClick={closeMobileNav}>Insurance &amp; Billing<span>Plans we accept</span></a>
-            <a href="#stories" onClick={closeMobileNav}>Patient Stories<span>Real reviews from Kanpur</span></a>
-            <a href="#gallery" onClick={closeMobileNav}>Smile Gallery<span>Before &amp; after results</span></a>
+            <a href="#book" onClick={handleLinkClick}>New Patient Forms<span>Fill out before your visit</span></a>
+            <a href="#why" onClick={handleLinkClick}>Insurance &amp; Billing<span>Plans we accept</span></a>
+            <a href="#stories" onClick={handleLinkClick}>Patient Stories<span>Real reviews from Kanpur</span></a>
+            <a href="#gallery" onClick={handleLinkClick}>Smile Gallery<span>Before &amp; after results</span></a>
           </div>
         </div>
 
-        <div className="nav-item">
-          <button type="button">
+        <div className={`nav-item ${activeDropdown === 'about' ? 'open' : ''}`}>
+          <button
+            type="button"
+            onClick={(e) => toggleDropdown('about', e)}
+            aria-expanded={activeDropdown === 'about'}
+          >
             About{' '}
             <svg viewBox="0 0 12 8" fill="none">
               <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.6" />
             </svg>
           </button>
           <div className="dropdown">
-            <a href="#team" onClick={closeMobileNav}>Meet the Team<span>Our dentists &amp; hygienists</span></a>
-            <a href="#why" onClick={closeMobileNav}>Our Approach<span>Why patients choose us</span></a>
-            <a href="#footer" onClick={closeMobileNav}>Visit &amp; Hours<span>Address, map, timings</span></a>
+            <a href="#team" onClick={handleLinkClick}>Meet the Team<span>Our dentists &amp; hygienists</span></a>
+            <a href="#why" onClick={handleLinkClick}>Our Approach<span>Why patients choose us</span></a>
+            <a href="#footer" onClick={handleLinkClick}>Visit &amp; Hours<span>Address, map, timings</span></a>
           </div>
         </div>
       </nav>

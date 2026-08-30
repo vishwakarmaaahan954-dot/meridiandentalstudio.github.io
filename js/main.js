@@ -12,7 +12,7 @@
  * ==============================================================================
  */
 
-import { initHeaderScroll, initScrollSpy, initMobileNav } from './navigation.js';
+import { initHeaderScroll, initScrollSpy, initMobileNav, initDropdowns } from './navigation.js';
 import { initScrollReveal, initToothParallax } from './animations.js';
 import { initTestimonials } from './testimonials.js';
 import { initBookingForm } from './booking.js';
@@ -23,6 +23,7 @@ function initApp() {
   initHeaderScroll();
   initScrollSpy();
   initMobileNav();
+  initDropdowns();
 
   // Visual Effects & Animations
   initScrollReveal();
