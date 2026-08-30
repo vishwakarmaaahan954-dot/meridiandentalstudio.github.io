@@ -40,18 +40,6 @@ Bash
 cd meridiandentalstudio.github.io
 Open index.html in your browser, or spin it up using VS Code Live Server for hot reloading.
 
-📁 Project Structure
-Here is a quick look at how the files are organized:
-
-meridiandentalstudio.github.io/
-│
-├── index.html
-├── style.css
-├── script.js
-├── assets/
-│   ├── images/
-│   └── icons/
-└── README.md
 📍 Clinic Info (Demo Data)
 Meridian Dental Studio
 14 Mall Road, Civil Lines
