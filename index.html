@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meridian Dental Studio in Kanpur — Boutique dentistry offering calm, unhurried care from routine cleanings to smile makeovers with Dr. Aanya Sharma.">
+  <title>Meridian Dental Studio — Kanpur</title>
+
+  <!-- Typography: Google Fonts (Online & Local fallbacks) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+
+  <!-- Master Stylesheet (Modularly structured in css/ directory) -->
+  <link rel="stylesheet" href="./styles.css">
+
+  <noscript>
+    <style>
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. DESKTOP SIDEBAR RAIL (Quick section navigation & phone quick-action)
+       ========================================================================= -->
+  <aside class="rail" aria-label="Quick Section Navigation">
+    <a href="#hero" aria-label="Meridian Dental Studio Home">
+      <svg class="rail-logo" viewBox="0 0 40 40" fill="none">
+        <path d="M20 6C13 6 9 10.5 9 16.5C9 22 11.5 27 13.3 31.5C14 33.3 15.6 34 16.8 32.4C18 30.8 18.3 26 20 26C21.7 26 22 30.8 23.2 32.4C24.4 34 26 33.3 26.7 31.5C28.5 27 31 22 31 16.5C31 10.5 27 6 20 6Z" stroke="#fff" stroke-width="1.6" fill="rgba(255,255,255,0.08)"/>
+      </svg>
+    </a>
+
+    <!-- Interactive Navigation Dots (Scrollspy enabled via js/navigation.js) -->
+    <nav class="rail-dots">
+      <a href="#hero" class="rail-dot active" data-label="Welcome" data-section="hero" aria-label="Jump to Welcome section"></a>
+      <a href="#services" class="rail-dot" data-label="Services" data-section="services" aria-label="Jump to Services section"></a>
+      <a href="#why" class="rail-dot" data-label="Why Us" data-section="why" aria-label="Jump to Why Us section"></a>
+      <a href="#team" class="rail-dot" data-label="Our Team" data-section="team" aria-label="Jump to Team section"></a>
+      <a href="#gallery" class="rail-dot" data-label="Smile Gallery" data-section="gallery" aria-label="Jump to Smile Gallery"></a>
+      <a href="#stories" class="rail-dot" data-label="Stories" data-section="stories" aria-label="Jump to Patient Stories"></a>
+      <a href="#book" class="rail-dot" data-label="Book a Visit" data-section="book" aria-label="Jump to Booking Form"></a>
+    </nav>
+
+    <!-- Rail Footer (Direct call shortcut) -->
+    <div class="rail-foot">
+      <a href="tel:+915122345678" aria-label="Call the clinic at +91 512 234 5678">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </a>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER (Offset on desktop for the 76px sidebar rail)
+       ========================================================================= -->
+  <div class="rail-offset">
+
+    <!-- =======================================================================
+         2. SITE HEADER (Frosted glass sticky header with dropdown menus)
+         ======================================================================= -->
+    <header class="site-header" id="siteHeader">
+      <a class="brand" href="#hero">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M20 6C13 6 9 10.5 9 16.5C9 22 11.5 27 13.3 31.5C14 33.3 15.6 34 16.8 32.4C18 30.8 18.3 26 20 26C21.7 26 22 30.8 23.2 32.4C24.4 34 26 33.3 26.7 31.5C28.5 27 31 22 31 16.5C31 10.5 27 6 20 6Z" stroke="#1F4B43" stroke-width="1.6" fill="#DCE7E1"/>
+        </svg>
+        <span class="brand-text">
+          <span class="name">Meridian Dental Studio</span>
+          <span class="tag">Dr. Aanya Sharma · Kanpur</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Bar -->
+      <nav class="main-nav" aria-label="Main Website Navigation">
+        <!-- Services Menu Dropdown -->
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true">Services <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <div class="dropdown">
+            <a href="#services">General &amp; Preventive<span>Checkups, cleanings, X-rays</span></a>
+            <a href="#services">Cosmetic Dentistry<span>Veneers, whitening, bonding</span></a>
+            <a href="#services">Orthodontics<span>Invisalign &amp; clear aligners</span></a>
+            <a href="#services">Restorative Care<span>Implants, crowns, root canals</span></a>
+            <a href="#services">Pediatric Dentistry<span>Gentle care for kids</span></a>
+          </div>
+        </div>
+
+        <!-- Patients Menu Dropdown -->
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true">Patients <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <div class="dropdown">
+            <a href="#book">New Patient Forms<span>Fill out before your visit</span></a>
+            <a href="#why">Insurance &amp; Billing<span>Plans we accept</span></a>
+            <a href="#stories">Patient Stories<span>Real reviews from Kanpur</span></a>
+            <a href="#gallery">Smile Gallery<span>Before &amp; after results</span></a>
+          </div>
+        </div>
+
+        <!-- About Menu Dropdown -->
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true">About <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <div class="dropdown">
+            <a href="#team">Meet the Team<span>Our dentists &amp; hygienists</span></a>
+            <a href="#why">Our Approach<span>Why patients choose us</span></a>
+            <a href="#footer">Visit &amp; Hours<span>Address, map, timings</span></a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Primary Action & Mobile Hamburger Trigger -->
+      <a class="book-btn" href="#book">Book a Visit</a>
+      <button class="hamburger" aria-label="Open mobile menu" type="button">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#142420" stroke-width="1.8">
+          <path d="M2 5h16M2 10h16M2 15h16"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- =======================================================================
+         3. HERO SECTION (Main headline, CTA buttons, and 3D animated tooth stage)
+         ======================================================================= -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-photo" aria-hidden="true"></div>
+      <div class="hero-grid">
+        <!-- Hero Left Column: Copywriting & Trust Numbers -->
+        <div class="hero-copy">
+          <span class="eyebrow">Kanpur's Boutique Dental Studio</span>
+          <h1>Dentistry that feels like <em>a deep breath</em>, not a deep drill.</h1>
+          <p class="lede">Meridian pairs calm, unhurried care with modern technique — from routine cleanings to full smile makeovers — for patients across Kanpur and beyond.</p>
+          
+          <div class="hero-actions">
+            <a class="btn-primary" href="#book">Book Your Visit</a>
+            <a class="btn-ghost" href="#services">Explore Services &rarr;</a>
+          </div>
+
+          <div class="hero-trust">
+            <div><strong>18</strong><span>Years in practice</span></div>
+            <div><strong>12.4k</strong><span>Smiles treated</span></div>
+            <div><strong>4.9★</strong><span>Average rating</span></div>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: 3D Animated Tooth Stage -->
+        <div class="tooth-stage" aria-hidden="true">
+          <div class="tooth-orbit-ring"></div>
+          <div class="tooth-orbit-ring r2"></div>
+          <div class="tooth-3d">
+            <div class="tooth-face front"></div>
+            <div class="tooth-face back"></div>
+            <div class="tooth-face side-l"></div>
+            <div class="tooth-face side-r"></div>
+            <div class="tooth-crack"></div>
+            <div class="tooth-sparkle"></div>
+          </div>
+          <div class="stat-chip c1"><i></i>0% pain-free promise</div>
+          <div class="stat-chip c2"><i></i>Same-week appointments</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. SERVICES SECTION (6 treatment category cards)
+         ======================================================================= -->
+    <section id="services">
+      <div class="section-head reveal">
+        <span class="eyebrow">What We Treat</span>
+        <h2>Care built around one mouth at a time.</h2>
+        <p>Every treatment plan starts with a conversation, not a checklist. Here's where most patients begin.</p>
+      </div>
+
+      <div class="service-grid">
+        <!-- Service Card 1 -->
+        <div class="service-card reveal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 5.5-7 12-7 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>General &amp; Preventive</h3>
+          <p>Checkups, cleanings, digital X-rays, and fluoride care to keep small issues small.</p>
+          <span class="price">From ₹800</span>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-card reveal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Cosmetic Dentistry</h3>
+          <p>Veneers, whitening, and bonding designed to match your face, not a catalogue smile.</p>
+          <span class="price">From ₹4,500</span>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-card reveal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 12h8M12 8v8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Orthodontics</h3>
+          <p>Invisalign and clear aligners tracked with 3D scans, no goopy impressions.</p>
+          <span class="price">From ₹38,000</span>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-card reveal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0 1 12 0v2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Pediatric Dentistry</h3>
+          <p>First visits, sealants, and gentle habits coaching for patients under twelve.</p>
+          <span class="price">From ₹700</span>
+        </div>
+
+        <!-- Service Card 5 -->
+        <div class="service-card reveal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2v20M4 8h16M6 14h12" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Dental Implants</h3>
+          <p>Single-tooth to full-arch implants planned with 3D imaging for a precise fit.</p>
+          <span class="price">From ₹28,000</span>
+        </div>
+
+        <!-- Service Card 6 -->
+        <div class="service-card reveal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <h3>Emergency Care</h3>
+          <p>Same-day slots for chipped teeth, sudden pain, and other can't-wait moments.</p>
+          <span class="price">Priority booking</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. WHY US / PRACTICE STATISTICS
+         ======================================================================= -->
+    <section id="why">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Patients Stay</span>
+        <h2>Numbers earned one appointment at a time.</h2>
+        <p>We track how we're doing the same way we track a filling — carefully, and over time.</p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-block reveal"><strong>18</strong><span>Years in practice</span></div>
+        <div class="stat-block reveal"><strong>12,400+</strong><span>Patients treated</span></div>
+        <div class="stat-block reveal"><strong>4.9 / 5</strong><span>Average patient rating</span></div>
+        <div class="stat-block reveal"><strong>97%</strong><span>Report pain-free procedures</span></div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. TEAM SECTION (Doctor profiles using downloaded local images)
+         ======================================================================= -->
+    <section id="team">
+      <div class="section-head reveal">
+        <span class="eyebrow">Meet the Team</span>
+        <h2>Three specialists, one shared chart.</h2>
+        <p>We consult on complex cases together, so your treatment plan reflects the whole team's thinking.</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Doctor 1 -->
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="./assets/images/team-dr-aanya.jpg" alt="Dr. Aanya Sharma, Founder and Specialist in Cosmetic & Restorative Dentistry">
+          </div>
+          <div class="team-info">
+            <span class="role">Founder · Cosmetic &amp; Restorative</span>
+            <h3>Dr. Aanya Sharma</h3>
+            <p>18 years in practice, trained in full-mouth rehabilitation and digital smile design.</p>
+          </div>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="./assets/images/team-dr-rohan.jpg" alt="Dr. Rohan Verma, Specialist in Orthodontics">
+          </div>
+          <div class="team-info">
+            <span class="role">Orthodontics</span>
+            <h3>Dr. Rohan Verma</h3>
+            <p>Leads our Invisalign program with over 900 aligner cases completed.</p>
+          </div>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="./assets/images/team-dr-kavya.jpg" alt="Dr. Kavya Iyer, Specialist in Pediatric Dentistry">
+          </div>
+          <div class="team-info">
+            <span class="role">Pediatric Dentistry</span>
+            <h3>Dr. Kavya Iyer</h3>
+            <p>Specializes in first visits and helping nervous young patients feel at ease.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. SMILE GALLERY (Horizontal scroll strip using downloaded local images)
+         ======================================================================= -->
+    <section id="gallery">
+      <div class="section-head reveal">
+        <span class="eyebrow">Smile Gallery</span>
+        <h2>A few results, with consent to share.</h2>
+        <p>Every case here is a real patient who agreed to let us show their journey.</p>
+      </div>
+
+      <div class="gallery-strip">
+        <div class="gallery-item reveal">
+          <img src="./assets/images/gallery-veneers.jpg" alt="Veneers before and after transformation">
+          <span class="tag">Veneers · 6 visits</span>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="./assets/images/gallery-whitening.jpg" alt="Teeth whitening treatment result">
+          <span class="tag">Whitening · 2 visits</span>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="./assets/images/gallery-invisalign.jpg" alt="Invisalign clear aligners patient smile">
+          <span class="tag">Invisalign · 11 months</span>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="./assets/images/gallery-implant.jpg" alt="Dental single tooth implant result">
+          <span class="tag">Implant · 1 tooth</span>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="./assets/images/gallery-sterilization.jpg" alt="Meridian modern sterilization suite">
+          <span class="tag">Our sterilization room</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. PATIENT STORIES & TESTIMONIALS (Interactive rotator)
+         ======================================================================= -->
+    <section id="stories">
+      <div class="section-head reveal" style="margin:0 auto 40px;">
+        <span class="eyebrow">Patient Stories</span>
+        <h2>In their words.</h2>
+      </div>
+
+      <div class="quote-wrap">
+        <p class="quote-text active">"I'd put off a root canal for two years out of fear. Dr. Sharma talked me through every step — I barely felt anything."</p>
+        <p class="quote-text">"My son actually asks to go back for his cleanings. Dr. Iyer has a gift with nervous kids."</p>
+        <p class="quote-text">"Eleven months of Invisalign and my bite finally feels right. The scans made it easy to see progress."</p>
+        <div class="quote-author" id="quoteAuthor">— Priya M., patient since 2021</div>
+        <div class="quote-dots" aria-label="Testimonial Navigation Dots">
+          <button class="active" data-i="0" aria-label="View quote 1"></button>
+          <button data-i="1" aria-label="View quote 2"></button>
+          <button data-i="2" aria-label="View quote 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         9. BOOKING CTA & APPOINTMENT REQUEST FORM
+         ======================================================================= -->
+    <section id="book">
+      <div class="book-grid">
+        <div class="reveal">
+          <span class="eyebrow">Book a Visit</span>
+          <h2>Let's find you a time that works.</h2>
+          <p>Fill in a few details and our front desk will confirm within one business day. New patients welcome.</p>
+        </div>
+
+        <form class="book-form reveal">
+          <div class="row">
+            <div class="field">
+              <label for="fname">First name</label>
+              <input id="fname" name="fname" placeholder="Ananya" required>
+            </div>
+            <div class="field">
+              <label for="lname">Last name</label>
+              <input id="lname" name="lname" placeholder="Gupta" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" placeholder="+91 98xxxxxx" required>
+            </div>
+            <div class="field">
+              <label for="service">Service</label>
+              <select id="service" name="service">
+                <option>General Checkup</option>
+                <option>Cosmetic Consultation</option>
+                <option>Orthodontics</option>
+                <option>Emergency</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="date">Preferred date</label>
+              <input id="date" name="date" type="date">
+            </div>
+            <div class="field">
+              <label for="time">Preferred time</label>
+              <input id="time" name="time" type="time">
+            </div>
+          </div>
+          <button class="submit" type="submit">Request Appointment</button>
+          <p class="note">This is a demo form with sample data — no appointment is actually booked.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         10. SITE FOOTER (Hours, address, newsletter & socials)
+         ======================================================================= -->
+    <footer id="footer">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a class="brand" href="#hero">
+            <svg viewBox="0 0 40 40" fill="none" width="30" height="30">
+              <path d="M20 6C13 6 9 10.5 9 16.5C9 22 11.5 27 13.3 31.5C14 33.3 15.6 34 16.8 32.4C18 30.8 18.3 26 20 26C21.7 26 22 30.8 23.2 32.4C24.4 34 26 33.3 26.7 31.5C28.5 27 31 22 31 16.5C31 10.5 27 6 20 6Z" stroke="#fff" stroke-width="1.6" fill="rgba(255,255,255,0.06)"/>
+            </svg>
+            <span class="brand-text">
+              <span class="name">Meridian Dental Studio</span>
+              <span class="tag">Since 2008</span>
+            </span>
+          </a>
+          <p>A boutique dental practice in Kanpur focused on calm, modern, patient-first care.</p>
+          
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#gallery">Smile Gallery</a></li>
+            <li><a href="#stories">Patient Stories</a></li>
+            <li><a href="#book">Book a Visit</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Details Column -->
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+915122345678">+91 512 234 5678</a></li>
+            <li><a href="mailto:hello@meridiandental.example">hello@meridiandental.example</a></li>
+            <li>14 Mall Road, Civil Lines<br>Kanpur, UP 208001</li>
+          </ul>
+        </div>
+
+        <!-- Clinic Hours & Newsletter Column -->
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <div class="hours-row"><span>Mon – Fri</span><span>9:00 – 19:00</span></div>
+          <div class="hours-row"><span>Saturday</span><span>9:00 – 17:00</span></div>
+          <div class="hours-row"><span>Sunday</span><span>By appointment</span></div>
+          
+          <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('button').textContent='✓';">
+            <input type="email" placeholder="Email for offers &amp; reminders" required>
+            <button type="submit" aria-label="Subscribe to newsletter">&rarr;</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Copyright Sub-Footer -->
+      <div class="footer-bottom">
+        <span>&copy; 2026 Meridian Dental Studio. All dummy content for demonstration.</span>
+        <span><a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#footer">Back to top &uarr;</a></span>
+      </div>
+    </footer>
+
+  </div><!-- /.rail-offset -->
+
+  <!-- =========================================================================
+       JAVASCRIPT APPLICATION ENTRY POINT
+       ========================================================================= -->
+  <script src="./js/app.js"></script>
+
+</body>
+</html>

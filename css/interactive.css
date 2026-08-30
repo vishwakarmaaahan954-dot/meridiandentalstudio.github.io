@@ -1,0 +1,221 @@
+/**
+ * ==============================================================================
+ * MERIDIAN DENTAL STUDIO — INTERACTIVE & FORM COMPONENTS (interactive.css)
+ * ==============================================================================
+ * This file styles the interactive elements:
+ * 1. Scroll-reveal animation triggers (.reveal and .reveal.in)
+ * 2. Testimonial carousel quotes & navigation dots (#stories)
+ * 3. Booking appointment form & custom input fields (#book)
+ */
+
+/* ==============================================================================
+ * 1. SCROLL REVEAL UTILITY CLASSES (Progressive Enhancement)
+ * ============================================================================== */
+/* Default safe state: 100% visible so content is never blank if JS is loading or blocked */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Active animated state when JS confirms observer capability */
+.reveal-ready .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.71s cubic-bezier(0.16, 1, 0.3, 1), transform 0.71s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-ready .reveal.in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-ready .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==============================================================================
+ * 2. TESTIMONIALS CAROUSEL
+ * ============================================================================== */
+#stories {
+  background: var(--pine-pale);
+  text-align: center;
+}
+
+.quote-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  min-height: 180px;
+}
+
+.quote-text {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  line-height: 1.45;
+  color: var(--ink);
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.quote-text.active {
+  display: block;
+  opacity: 1;
+}
+
+.quote-author {
+  margin-top: 22px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--pine-light);
+}
+
+/* Pagination Dots */
+.quote-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.quote-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(31, 75, 67, 0.3);
+  transition: background 0.2s ease, width 0.2s ease;
+}
+
+.quote-dots button.active {
+  background: var(--pine);
+  width: 22px;
+  border-radius: 5px;
+}
+
+/* ==============================================================================
+ * 3. BOOKING CTA & FORM
+ * ============================================================================== */
+#book {
+  background:
+    linear-gradient(100deg, rgba(20, 30, 26, 0.88), rgba(20, 30, 26, 0.6)),
+    url('../assets/images/book-bg.jpg') center/cover;
+  color: #ffffff;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+@media (max-width: 950px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+#book .eyebrow {
+  color: var(--coral);
+}
+
+#book h2 {
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-weight: 600;
+  margin: 12px 0 16px;
+}
+
+#book p {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 440px;
+}
+
+/* Form Container Card */
+.book-form {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 22px;
+  padding: 32px;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+.book-form .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 520px) {
+  .book-form .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual Form Fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.field input,
+.field select {
+  padding: 12px 13px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  font-family: var(--body);
+  font-size: 0.9rem;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--pine);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31, 75, 67, 0.12);
+}
+
+/* Submit Button & Subtext */
+.book-form .submit {
+  width: 100%;
+  margin-top: 6px;
+  background: var(--pine);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 12px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.book-form .submit:hover {
+  background: var(--pine-light);
+}
+
+.book-form .submit:active {
+  transform: scale(0.99);
+}
+
+.book-form .note {
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  margin-top: 12px;
+  text-align: center;
+}

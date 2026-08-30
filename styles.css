@@ -1,0 +1,20 @@
+/**
+ * ==============================================================================
+ * MERIDIAN DENTAL STUDIO — MAIN STYLESHEET (styles.css)
+ * ==============================================================================
+ * This is the central stylesheet entry point. It imports modular stylesheets
+ * organized by specific layout, component, and interaction responsibilities:
+ *
+ * 1. css/variables.css   - Design tokens, color palette, resets & typography
+ * 2. css/layout.css      - Sidebar rail, sticky header, dropdowns & responsive shell
+ * 3. css/hero.css        - Hero section, CSS 3D tooth stage & keyframe animations
+ * 4. css/sections.css    - Services grid, Why Us stats, Team cards, Gallery & Footer
+ * 5. css/interactive.css - Testimonial rotator, booking form & scroll reveals
+ * ==============================================================================
+ */
+
+@import url('./css/variables.css');
+@import url('./css/layout.css');
+@import url('./css/hero.css');
+@import url('./css/sections.css');
+@import url('./css/interactive.css');

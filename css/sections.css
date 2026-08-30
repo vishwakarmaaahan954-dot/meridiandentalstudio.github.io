@@ -1,0 +1,425 @@
+/**
+ * ==============================================================================
+ * MERIDIAN DENTAL STUDIO — CONTENT SECTIONS & FOOTER (sections.css)
+ * ==============================================================================
+ * This file styles the core content sections of the page:
+ * 1. Services Grid
+ * 2. Why Us & Statistics Counters
+ * 3. Team Cards Grid
+ * 4. Smile Gallery Strip
+ * 5. Global Footer & Contact Columns
+ */
+
+/* ==============================================================================
+ * 1. SERVICES SECTION
+ * ============================================================================== */
+#services {
+  background: var(--card);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1050px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  background: #ffffff;
+}
+
+.service-card .icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: var(--pine-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+.service-card:hover .icon-wrap {
+  background: var(--pine);
+}
+
+.service-card:hover .icon-wrap svg {
+  stroke: #ffffff;
+}
+
+.service-card .icon-wrap svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--pine);
+  transition: stroke 0.3s ease;
+}
+
+.service-card h3 {
+  font-family: var(--display);
+  font-size: 1.22rem;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.service-card p {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+}
+
+.service-card .price {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--pine-light);
+  font-weight: 500;
+}
+
+/* ==============================================================================
+ * 2. WHY US / STATS SECTION
+ * ============================================================================== */
+#why {
+  background:
+    linear-gradient(100deg, rgba(20, 30, 26, 0.86), rgba(20, 30, 26, 0.72)),
+    url('../assets/images/why-bg.jpg') center/cover;
+  color: #ffffff;
+}
+
+#why .section-head p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+#why .section-head .eyebrow {
+  color: var(--coral);
+}
+
+#why .section-head h2 {
+  color: #ffffff;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stat-block {
+  border-left: 2px solid rgba(255, 255, 255, 0.25);
+  padding-left: 18px;
+}
+
+.stat-block strong {
+  font-family: var(--mono);
+  font-size: 2.3rem;
+  font-weight: 500;
+  display: block;
+  color: var(--coral);
+}
+
+.stat-block span {
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ==============================================================================
+ * 3. TEAM SECTION
+ * ============================================================================== */
+#team {
+  background: var(--bg);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+}
+
+.team-card {
+  background: var(--card);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.team-photo {
+  height: 280px;
+  overflow: hidden;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-photo img {
+  transform: scale(1.06);
+}
+
+.team-info {
+  padding: 22px 24px 26px;
+}
+
+.team-info .role {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coral-deep);
+}
+
+.team-info h3 {
+  font-family: var(--display);
+  font-size: 1.32rem;
+  font-weight: 600;
+  margin: 6px 0 8px;
+}
+
+.team-info p {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+/* ==============================================================================
+ * 4. SMILE GALLERY SECTION
+ * ============================================================================== */
+#gallery {
+  background: var(--card);
+}
+
+.gallery-strip {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 14px;
+  scrollbar-width: thin;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.gallery-strip::-webkit-scrollbar {
+  height: 7px;
+}
+
+.gallery-strip::-webkit-scrollbar-thumb {
+  background: var(--pine-pale);
+  border-radius: 10px;
+}
+
+.gallery-item {
+  position: relative;
+  flex: 0 0 260px;
+  height: 320px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-item .tag {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 6px 12px;
+  border-radius: 99px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+/* ==============================================================================
+ * 5. FOOTER & CONTACT INFO
+ * ============================================================================== */
+footer {
+  background: #101E1A;
+  color: rgba(255, 255, 255, 0.82);
+  padding: 70px 60px 30px;
+}
+
+@media (max-width: 900px) {
+  footer {
+    padding: 60px 24px 26px;
+  }
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 0.9fr 1.1fr;
+  gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-brand .brand-text .name {
+  color: #ffffff;
+}
+
+.footer-brand .brand-text .tag {
+  color: var(--coral);
+}
+
+.footer-brand p {
+  margin-top: 16px;
+  font-size: 0.88rem;
+  max-width: 280px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-social a:hover {
+  background: var(--coral);
+  border-color: var(--coral);
+}
+
+.footer-social svg {
+  width: 15px;
+  height: 15px;
+}
+
+.footer-col h4 {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 18px;
+}
+
+.footer-col li {
+  margin-bottom: 11px;
+  font-size: 0.9rem;
+}
+
+.footer-col a:hover {
+  color: var(--coral);
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  margin-bottom: 9px;
+}
+
+.hours-row span:last-child {
+  font-family: var(--mono);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.newsletter {
+  display: flex;
+  margin-top: 14px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 11px 13px;
+  border-radius: 10px 0 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+.newsletter input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.newsletter button {
+  padding: 0 16px;
+  background: var(--coral);
+  border-radius: 0 10px 10px 0;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer-bottom {
+  max-width: 1300px;
+  margin: 22px auto 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
+}
