@@ -43,7 +43,6 @@ Open index.html in your browser, or spin it up using VS Code Live Server for hot
 📁 Project Structure
 Here is a quick look at how the files are organized:
 
-Plaintext
 meridiandentalstudio.github.io/
 │
 ├── index.html
@@ -65,6 +64,7 @@ Email: hello@meridiandental.example
 Hours: Mon–Fri (9 AM – 7 PM) | Sat (9 AM – 5 PM) | Sun (By appointment)
 
 ⚠️ Quick Heads-Up
+
 This is a demo project. The clinic information is dummy text, and the appointment form doesn't actually book anything to a database. If you plan to fork this for a real business, be sure to hook the form up to a backend and swap in your own licensed images and real contact info!
 
 👤 Say Hi!
